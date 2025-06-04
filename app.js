@@ -3,12 +3,14 @@
 
     // Esquema para validar los datos del formulario
     const registerSchema = z.object({
-      // PISTA: Define que el nombre debe ser una cadena no vacía.
-
-      // PISTA: Valida que el correo tenga el formato correcto.
-
-      // PISTA: La contraseña debe tener al menos 6 caracteres.
-
+        // PISTA: Define que el nombre debe ser una cadena no vacía.
+        name: z.string().min(1, { message: "El nombre es requerido" }),
+        
+        // PISTA: Valida que el correo tenga el formato correcto.
+        email: z.string().email({ message: "Ingresa un correo válido" }),
+        
+        // PISTA: La contraseña debe tener al menos 6 caracteres.
+        password: z.string().min(6, { message: "La contraseña debe tener al menos 6 caracteres" })
     });
 
     document.getElementById("registerForm").addEventListener("submit", (event) => {
