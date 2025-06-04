@@ -26,6 +26,7 @@
       try {
         // PISTA: Usa el método correcto de Zod para validar el esquema.
         //registerSchema.___?___(formData);
+        registerSchema.parse(formData);
         alert("¡Registro exitoso!");
       } catch (error) {
         // PISTA: Muestra los mensajes de error en la página.
