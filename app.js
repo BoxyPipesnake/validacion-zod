@@ -28,6 +28,7 @@
         //registerSchema.___?___(formData);
         registerSchema.parse(formData);
         alert("¡Registro exitoso!");
+        document.getElementById("errors").textContent = "";
       } catch (error) {
         // PISTA: Muestra los mensajes de error en la página.
         document.getElementById("errors").textContent = error.errors.map(e => e.message).join(", ");
